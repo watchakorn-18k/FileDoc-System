@@ -1,6 +1,6 @@
-<p align="center">FileDoc 📄</p>
+<h1 align="center">FileDoc 📄</h1>
 <p align="center">System For Manage File Focument On School With Angular</p>
-<p align="center"><a href="#"><img src="https://img.shields.io/github/languages/code-size/watchakorn-18k/FileDoc-System"/></a>
+<p align="center"><a href="#"><img src="https://img.shields.io/github/languages/code-size/watchakorn-18k/FileDoc-System"/></a></p>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
 
 ## Development server

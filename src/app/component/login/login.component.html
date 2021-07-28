@@ -1,0 +1,30 @@
+<form class="form">
+    <p align="center" style="font-size: 30px;"><b> FileDoc</b></p>
+    <p align="center"  style="font-size: 15px;">ลงชื่อเข้าใช้งาน</p>
+    <mat-form-field class="full-width" appearance="fill" color="accent">
+        <mat-label>กรอกอีเมล</mat-label>
+        <input 
+        matInput 
+        [(ngModel)]="U_username"
+        name="username"
+        placeholder="ex@example.com" 
+        [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="fill" color="accent">
+        <mat-label>รหัสผ่าน</mat-label>
+        <input 
+        [(ngModel)]="P_password"
+        name="password"
+        matInput 
+        [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button 
+      class="full-width" 
+      mat-flat-button 
+      color="accent" (click)="OnClickSunmit()"><mat-icon>power_settings_new</mat-icon > เข้าสู่ระบบ</button>
+      <p class="reset-passworded"><a class="reset-passworded" [routerLink]="['/reset-password']" routerLinkActive="active">ลืมรหัสผ่านหรือเปล่า?</a></p>
+</form>

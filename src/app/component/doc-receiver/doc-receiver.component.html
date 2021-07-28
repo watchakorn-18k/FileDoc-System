@@ -1,0 +1,162 @@
+<mat-list>
+<mat-list-item class="head-book"><mat-icon>library_add</mat-icon>&nbsp;ลงทะเบียนหนังสือรับ</mat-list-item>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-label><p align="center">รายงานทะเบียนหนังสือรับ</p></mat-label>
+</mat-list>
+<mat-grid-list cols="2" rowHeight="5:1">
+    <mat-grid-tile >
+        <mat-form-field appearance="fill" color="accent"> 
+            <mat-label 
+            style="font-size:12px">แสดงจากวันที่</mat-label>
+            <input matInput [matDatepicker]="picker1" [formControl]="date">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-form-field appearance="fill" color="accent"> 
+            <mat-label 
+            style="font-size:12px">ถึงวันที่</mat-label>
+            <input matInput [matDatepicker]="picker2" [formControl]="date" value="">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+    </mat-grid-tile>
+</mat-grid-list>
+<br>
+<mat-stepper labelPosition="bottom" #stepper >
+    <mat-step [stepControl]="firstFormGroup" >
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel color="accent">ลงทะเบียนหนังสือรับ</ng-template>
+        <mat-grid-list cols="2" rowHeight="60px" color="accent" style="margin:20px">
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" color="accent">
+                    <mat-label>เลขทะเบียนรับ</mat-label>
+                    <input matInput placeholder="กก.000/25xx" formControlName="firstCtrl" required>
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" color="accent">
+                    <mat-label style="font-size:12px">วันที่ (รับหนังสือ) ของโรงเรียน</mat-label>
+                    <input matInput placeholder="{{today}}" required>
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" color="accent">
+                    <mat-label>ประเภท</mat-label>
+                    <mat-select [(value)]="selected">
+                      <mat-option value="option1">หนังสือราชการภายนอก</mat-option>
+                      <mat-option value="option2">บันทึกข้อความ</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" color="accent">
+                    <mat-label style="font-size: 12px;">เวลา (รับหนังสือ) ของโรงเรียน</mat-label>
+                    <input matInput placeholder="{{time}}" required>
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" color="accent">
+                    <mat-label 
+                    style="font-size:12px">ที่</mat-label>
+                    <input matInput placeholder="กก 0000/25xx" required>
+                  </mat-form-field >
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" color="accent">
+                    <mat-label>จาก (หน่วยงาน)</mat-label>
+                    <input matInput placeholder="" required>
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" color="accent">
+                    <mat-label>ถึง</mat-label>
+                    <input matInput  required>
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" color="accent">
+                    <mat-label>เรื่อง</mat-label>
+                    <input matInput placeholder="" required>
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" color="accent">
+                    <mat-label>การปฏิบัติ</mat-label>
+                    <input matInput placeholder="">
+                  </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <br>
+        <div>
+          <button mat-raised-button matStepperNext color="primary" style="margin-left:45%;">ถัดไป</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" optional>
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>เอกสารหนังสือรับ</ng-template>
+        <mat-grid-list cols="2" rowHeight="2:1" color="accent">
+        <mat-grid-tile>
+        <!-- File upload -->
+        <input #pdfInput hidden="true" type="file" onclick="this.value=null" (change)="pdfInputChange($event)" accept=".pdf"/>
+        <button mat-flat-button color="primary" style="font-size: 90% !important" (click)="pdfInput.click()">แนบไฟล์หนังสือราชการ(.PDF เท่านั้น)</button>
+    </mat-grid-tile>
+        <!-- ---- -->
+    <mat-grid-tile>
+        <input #allInput hidden="true" type="file" onclick="this.value=null" (change)="allInputChange($event)" accept=""/>
+        <button mat-flat-button color="accent" style="font-size: 90% !important" (click)="allInput.click()">แนบไฟล์(สิ่งที่ส่งมาด้วย)</button>
+        <!-- end File upload -->
+    </mat-grid-tile>
+    </mat-grid-list>
+        <div>
+        
+            <mat-grid-list cols="2" rowHeight="45px" color="accent">
+<mat-grid-tile>
+          <button mat-raised-button  color="basic" matStepperPrevious>กลับไป</button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-raised-button  color="primary"  matStepperNext>ถัดไป</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>มอบหมาย</ng-template>
+      <mat-grid-list cols="3" rowHeight="45px" color="accent" style="margin:20px">
+        <mat-grid-tile>
+            <p><mat-checkbox>นายสมชัย ใจสม</mat-checkbox></p>
+            </mat-grid-tile>
+        <mat-grid-tile>
+            <p><mat-checkbox>นายสมชัย ใจสม</mat-checkbox></p>
+            </mat-grid-tile>
+        <mat-grid-tile>
+            <p><mat-checkbox>นายสมชัย ใจสม</mat-checkbox></p>
+            </mat-grid-tile>
+        <mat-grid-tile>
+            <p><mat-checkbox>นายสมชัย ใจสม</mat-checkbox></p>
+            </mat-grid-tile>
+        <mat-grid-tile>
+            <p><mat-checkbox>นายสมชัย ใจสม</mat-checkbox></p>
+            </mat-grid-tile>
+        <mat-grid-tile>
+            <p><mat-checkbox>นายสมชัย ใจสม</mat-checkbox></p>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-grid-list cols="3" rowHeight="45px" color="accent">
+            <mat-grid-tile>
+                      <button mat-raised-button  color="basic" matStepperPrevious>กลับไป</button>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                      <button mat-raised-button  color="primary"  (click)="success_doc()">เสร็จสิ้น</button>
+                    </mat-grid-tile>
+                <mat-grid-tile>
+                    <button mat-raised-button  color="accent" (click)="stepper.reset()">เริ่มใหม่</button>
+                    </mat-grid-tile>
+                </mat-grid-list>
+    </mat-step>
+  </mat-stepper>
+

@@ -1,0 +1,32 @@
+<form class="form">
+  <p align="center" style="font-size: 30px;"><b> FileDoc</b></p>
+  <p align="center"  style="font-size: 15px;">ลงทะเบียนเข้าใช้งาน</p>
+    <mat-form-field class="full-width" appearance="fill" color="accent">
+      <mat-label style="font-size: 85% !important;">ชื่อจริง</mat-label>
+      <input matInput style="padding: 1px;" placeholder="กรอกชื่อจริง" value="">
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill" color="accent">
+      <mat-label>นามสกุล</mat-label>
+      <input matInput placeholder="กรอกนามสกุล" value="">
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill" color="accent">
+        <mat-label>กรอกอีเมล</mat-label>
+        <input matInput placeholder="ex@example.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="fill" color="accent">
+        <mat-label>รหัสผ่าน</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="fill" color="accent">
+        <mat-label>ยืนยันรหัสผ่าน</mat-label>
+        <input matInput [type]="rehide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="rehide = !rehide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="rehide">
+          <mat-icon>{{rehide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button class="full-width" mat-flat-button color="accent">ลงทะเบียน</button>
+</form>

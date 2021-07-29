@@ -1,9 +1,9 @@
 <mat-list>
 <mat-list-item class="head-book"><mat-icon>library_add</mat-icon>&nbsp;ลงทะเบียนหนังสือรับ</mat-list-item>
     <mat-divider></mat-divider>
-    <br>
-    <mat-label><p align="center">รายงานทะเบียนหนังสือรับ</p></mat-label>
+    <mat-label><h1 align="center" style="padding:20px">รายงานทะเบียนหนังสือรับ</h1></mat-label>
 </mat-list>
+<div class="box-box">
 <mat-grid-list cols="2" rowHeight="5:1">
     <mat-grid-tile >
         <mat-form-field appearance="fill" color="accent"> 
@@ -126,7 +126,7 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>มอบหมาย</ng-template>
-      <mat-grid-list cols="3" rowHeight="45px" color="accent" style="margin:20px">
+      <mat-grid-list cols="3" rowHeight="60px" color="accent" style="margin:20px">
         <mat-grid-tile>
             <p><mat-checkbox>นายสมชัย ใจสม</mat-checkbox></p>
             </mat-grid-tile>
@@ -159,4 +159,7 @@
                 </mat-grid-list>
     </mat-step>
   </mat-stepper>
-
+</div>
+<mat-toolbar  class="footer">
+  <p style="position: fixed;font-size: 100%;right: 2%;bottom:-1% !important;">Beta DEV. Watchakorn-18K</p>
+</mat-toolbar>

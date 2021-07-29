@@ -1,16 +1,32 @@
 
-.head-book{
-    margin: 1%;
-    padding: 1%;
-}
-mat-list{
-    margin: 10px;
-}
-
 .mat-form-field {
     margin-top: 16px;
   }
 ::ng-deep .mat-step-optional.ng-star-inserted {
     display: none !important;
 }
+mat-stepper{
+    margin:0 5%;
+    background-color: #0d3049;
+    border-radius: 10px;
+}
+::ng-deep .mat-step-icon.mat-step-icon-state-number.mat-step-icon-selected,.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+    background-color: rgb(4, 100, 165);
+}
+::ng-deep .mat-horizontal-content-container.ng-tns-c137-3.ng-star-inserted {
+    margin: 0 20%;
+}
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    height: 4%;
+    width: 100%;
+    background-color: rgb(37, 78, 105);
+    color: white;
+    text-align: center !important;
+ }
+ .box-box{
+     margin:-2% 0px;
+ }
 

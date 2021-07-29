@@ -1,28 +1,28 @@
 <h1 align="center">FileDoc 📄</h1>
 <p align="center">System For Manage File Focument On School With Angular</p>
 <p align="center"><a href="#"><img src="https://img.shields.io/github/languages/code-size/watchakorn-18k/FileDoc-System"/></a></p>
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
+
+<p align="center">โปรเจ็คนี้สร้างขึ้นโดยใช้ [Angular CLI](https://github.com/angular/angular-cli) เวอร์ชั่น 12.1.3.</p>
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+รัน `ng serve` เพื่อเริ่มพัฒนาโดยให้ไปที่ `http://localhost:4200/` แอพพลิเคชั่นจะทำการรีโหลดอัตโนมัติถ้าหากมีการบันทึกข้อมูล
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+รัน `ng generate component component-name` เพื่อ generate component ใหม่ขึ้นมา คุณยังสามารถใช้ `ng generate directive|pipe|service|class|guard|interface|enum|module`ได้อีกด้วย
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+รัน `ng build` เพื่อ build project ของคุณ ไฟล์หลัง build แล้วจะเก็บอยู่ใน directory `dist/` 
 
-## Running unit tests
+#### CHANGE LOG
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### 0.0.0 (2021-07-29)
 
-## Running end-to-end tests
+- Updated  doc-receiver
+- Updated file Readme.md
+- Updated Readme.md
+- Create FileDoc to Github
+- initial commit
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
